@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7fc">
+  <meta name="description" content="Личный практикум по QA и веб-разработке.">
+  <title>Сегодня · Путь в IT</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#today"><span class="brand-mark" aria-hidden="true">›_</span><span><strong>Путь в IT</strong><small>QA и веб-разработка</small></span></a>
+      <nav id="nav" aria-label="Основная навигация"></nav>
+      <div class="side-bottom">
+        <a class="side-link" href="#resources">Материалы</a>
+        <a class="side-link" href="#data">Резервная копия</a>
+        <p id="save-status" class="save-status" role="status">Открываю прогресс…</p>
+      </div>
+    </aside>
+    <div class="body-shell">
+      <header class="topbar">
+        <a class="mobile-brand" href="#today"><span class="brand-mark" aria-hidden="true">›_</span>Путь в IT</a>
+        <span class="breadcrumb" id="breadcrumb">Практикум</span>
+        <div class="top-actions"><a href="#resources" class="mobile-link">Материалы</a><a href="#data" class="quiet-link">Данные</a><a href="./stand.html" class="stand-link">Стенд <span aria-hidden="true">↗</span></a></div>
+      </header>
+      <main id="main" tabindex="-1" data-page="today"><p class="initial-message">Загружаю практикум…</p></main>
+      <noscript><p>Включи JavaScript, чтобы сохранять задания и проходить практику.</p></noscript>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
