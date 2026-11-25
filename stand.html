@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7fc">
+  <title>Заявки на услуги · Путь в IT</title>
+  <link rel="icon" href="./icon-192.png" type="image/png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="topbar stand-top">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">›_</span><span><strong>Путь в IT</strong><small>QA и веб-разработка</small></span></a>
+    <a class="stand-link" href="./#lesson/qa-boundaries">К занятию по границам</a>
+  </header>
+
+  <main id="main" class="stand-shell" tabindex="-1">
+    <header class="page-head">
+      <h1>Заявки на услуги</h1>
+      <p id="stand-intro">Учебный стенд на вымышленных данных. Отправь заявку в каждом режиме и сравни ответ API в DevTools с тем, что появилось в списке.</p>
+    </header>
+
+    <div class="split">
+      <section class="panel" aria-labelledby="new-title">
+        <h2 id="new-title">Создать заявку</h2>
+        <form id="request-form" class="stack" method="post" novalidate>
+          <div class="field">
+            <label for="mode">Режим стенда</label>
+            <select id="mode" name="mode" aria-describedby="mode-help">
+              <option value="correct">Исправная форма</option>
+              <option value="defect">Форма с дефектом</option>
+            </select>
+            <small id="mode-help">Оба режима используют общий список заявок.</small>
+          </div>
+          <div class="field">
+            <label for="title">Название заявки</label>
+            <input id="title" name="title" type="text" aria-describedby="title-help form-result" autocomplete="off">
+            <small id="title-help">От 4 до 24 символов включительно после удаления пробелов по краям.</small>
+          </div>
+          <div class="field">
+            <label for="service">Услуга</label>
+            <select id="service" name="serviceId">
+              <option value="1">Ремонт</option>
+              <option value="2">Уборка</option>
+              <option value="3">Доставка</option>
+            </select>
+          </div>
+          <div class="cluster"><button id="create" type="submit" class="button" disabled>Создать заявку</button></div>
+          <p id="form-result" class="callout" role="status" hidden></p>
+        </form>
+        <noscript><p class="callout">Включи JavaScript, чтобы отправлять запросы к учебному API.</p></noscript>
+      </section>
+
+      <section class="panel" aria-labelledby="list-title">
+        <h2 id="list-title">Список заявок</h2>
+        <div class="stack">
+          <div class="field">
+            <label for="filter">Показать</label>
+            <select id="filter">
+              <option value="all">Все заявки</option>
+              <option value="open">Открытые</option>
+              <option value="closed">Закрытые</option>
+            </select>
+          </div>
+          <p id="connection" role="status" class="muted">Проверяю подключение к учебному API…</p>
+          <p id="list-result" role="status" class="muted" hidden></p>
+          <ul class="data-list" id="requests" aria-label="Заявки"></ul>
+          <p class="empty" id="empty-list" hidden></p>
+          <div class="cluster">
+            <button type="button" class="button secondary" id="refresh">Обновить список</button>
+            <button type="button" class="button subtle" id="reset" disabled>Сбросить учебные заявки</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="./stand.mjs"></script>
+</body>
+</html>
